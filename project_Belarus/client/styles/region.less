@@ -1,0 +1,182 @@
+.main-container {
+  &__content {
+    .region {
+      position: relative;
+      height: auto;
+      width: 100%;
+      max-height: 639px;
+      max-width: 900px;
+      align-self: flex-start;
+      text-align: center;
+    
+      .regionImg {
+        height: auto;
+        width: 100%;
+        max-height: 639px;
+      }
+    
+      .regionImg.minsk,
+      .regionImg.grodno {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  &__aside {
+    .description {
+      position: fixed;
+      top: 0;
+      width: 0;
+      height: 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    
+      font-family: sans-serif;
+      color: rgb(67, 144, 122);
+      font-size: larger;
+      transform: translateY(-100%);
+      transition: transform 1s;
+  
+      &.active {
+        transform: translateY(0%);
+        transition: transform 1s;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        position: absolute;   
+      }
+
+      &.inactive {
+        transform: translateY(-150%);
+        transition: transform 1.5s;
+      }
+
+      .imgBox {
+        height: auto;
+        width: 100%;
+        padding: 5px;
+        outline: 5px double white;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .title {
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          font-size: x-large;
+          max-width: 250px;
+        }
+        
+        .heart {
+          position: relative;
+          width: 50px;
+          height: 40px;
+          padding-left: 50px;
+        }
+
+        .heart:before,
+        .heart:after {
+          position: absolute;
+          content: "";
+          width: 25px;
+          height: 40px;
+          left: 25px;
+          
+          background-color: black;
+          border-radius: 100px 100px 0 0;
+          
+          transform: rotate(-45deg);
+          transform-origin: 0 100%;
+          transition-duration: 1000ms;
+        }
+        .heart:after {
+          left: 0; 
+          transform-origin: 100% 100%;
+          transform: rotate(45deg);
+        }
+
+        .red_heart::before,
+        .red_heart::after {
+            background-color: tomato;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+
+    &__content {
+      flex-direction: row;
+
+      .region {
+        max-width: 650px;
+
+        .regionImg.minsk,
+        .regionImg.grodno {
+          max-height: 530px;
+          width: auto;
+        }
+      }
+      
+    }
+
+    &__aside {
+      min-height: 100px;
+      height: 50%;
+      width: 100%;
+
+      .description {
+        transform: translateY(100%);
+        font-size: medium;
+
+        .imgBox {
+          display: none;
+        }
+
+        .header {
+          .title {
+            font-size: x-large;
+          }
+        }
+
+        &.active {
+          transform: translateY(0%);
+          transition: transform 1s; 
+        }
+
+        &.inactive {
+          transform: translateY(120%);
+          transition: transform 1.5s;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width:720px) {
+  .main-container {
+    &__aside {
+      .description {
+        font-size: small;
+
+        .header {
+          .title {
+            font-size: large;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,216 @@
+@import "reset";
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header-container {
+  background-color: rgb(104, 225, 191);
+  
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    text-align: center;
+
+    .header__link {
+      font-family: sans-serif;
+      text-decoration: none;
+      color: white;
+      font-size: xx-large;
+      border-bottom: 3px solid transparent;
+      border-width: 5px;
+      padding: 3px;
+
+      &.active {
+        border-bottom: 3px dotted white;
+        border-width: 5px;
+        padding: 3px;
+      }
+    }
+  }
+}
+
+.main-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 80%;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .map-wrapper {
+      width: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin: auto 0;
+      overflow: hidden;
+
+      .belarusImg {   
+        height: 720px;
+        width: auto;
+      }
+    }
+  }
+
+  &__aside {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    overflow: overlay;
+    padding-right: 15px;
+    min-width: 100px;
+    width: 50%;
+
+    .about {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: sans-serif;
+      color: rgb(67, 144, 122);
+      font-size: larger;
+      padding: 15px;
+
+      .title {
+        font-weight: bold;
+      }
+    }  
+  }
+}
+
+.footer-container {
+  background-color: rgb(104, 225, 191);
+  width: 100%;
+  padding: 10px;
+
+  font-family: sans-serif;
+  color: white;
+  font-size: xx-large;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-error404 {
+  color: rgb(104, 225, 191);
+  font-size: xx-large;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.none {
+  display: none;
+}
+
+.header__link {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: xx-large;
+  border-bottom: 3px solid transparent;
+  border-width: 5px;
+  padding: 3px;
+
+  &.active {
+    border-bottom: 3px dotted white;
+    border-width: 5px;
+    padding: 3px;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .header-container {
+    &__nav {
+      .header__link {
+        font-size:x-large;
+
+        &.active {
+          border-bottom: 2px dotted white;
+          border-width: 4px;
+        }
+      }
+    }
+  }
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+
+    &__content {
+      .map-wrapper {
+        .belarusImg {   
+          height: 450px;
+          width: auto;
+        }
+      }
+    }
+
+    &__aside {
+      min-height: 100px;
+      height: 50%;
+      width: 100%;
+
+      .about {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: sans-serif;
+        color: rgb(67, 144, 122);
+        font-size: medium;
+        padding: 15px;
+  
+        .title {
+          font-weight: bold;
+        }
+      }  
+    }
+  }
+  .footer-container {
+    font-size: x-large;
+  }  
+}
+
+@media screen and (max-width:720px) {
+  .header-container {
+    &__nav {
+      .header__link {
+        font-size: large;
+
+        &.active {
+          border-bottom: 1px dotted white;
+          border-width: 4px;
+        }
+      }
+    }
+  }
+  
+  .footer-container {
+    font-size: large;
+  }  
+}

@@ -1,0 +1,137 @@
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  font-family: sans-serif;
+  color: #766161; 
+  font-size: medium;
+  text-align: center;
+
+  &__favorite-locations {
+    border: 2px dashed #AAAAAA;
+    padding: 10px;
+    width: 100%;
+    height: 30%;
+    flex-grow: 1;
+    overflow: auto;
+
+    .title {
+      background-color: #AAAAAA;
+      padding: 5px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .favorite-locations {
+      &__box {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid black;
+        padding: 10px;
+        gap: 10px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 5px;
+
+        p {
+          font-weight: bold;
+        }
+
+        a {
+          font-size: small;
+          text-decoration: none;
+          color: #AAAAAA;
+
+          &:hover {
+            color: #766161;
+          }
+        }
+      }
+
+      .favLocationImg {
+        width: 10%;
+      }
+    }
+  }
+
+  &__notes {
+    border: 2px dashed #AAAAAA;
+    padding: 10px;
+    width: 100%;
+    height: 30%;
+    flex-grow: 1;
+    overflow: auto;
+
+    .title {
+      background-color: #AAAAAA;
+      padding: 5px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .notes_wrapper {
+      .note_container {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid black;
+        padding: 5px;
+        gap: 10px;
+
+        .date {
+          text-align: left;
+          font-weight: bold;
+        }
+
+        .note {
+          max-width: 800px;
+          border: 1px solid #AAAAAA;
+          color: #766161;
+        }
+
+        .actionButtons {
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+
+          button {
+            background-color: transparent;
+            border: 4px solid rgb(104, 225, 191);
+            border-radius: 5px;
+            color: rgb(104, 225, 191); 
+            padding: 5px;
+            transform: scale(1, 1);
+            transition-duration: 1000ms;
+          }
+        
+          button:hover {
+            border: 4px solid #A6E3E9;
+            transform: scale(1.1, 1.1);
+            transition-duration: 1000ms;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .userInfo {
+    font-size: medium;
+
+    &__favorite-locations {
+      height: 100%;
+    }
+
+    &__notes {
+      height: 100%;
+    }
+  }
+}
